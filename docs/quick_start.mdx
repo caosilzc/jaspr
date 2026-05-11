@@ -1,79 +1,79 @@
 ---
-title: Quickstart
-description: Get started with Jaspr and build your first website in Dart.
+标题：快速入门
+说明：开始使用Jaspr，并在Dart中建立您的第一个网站.
 ---
 
 ---
 
-Welcome to the Jaspr Getting Started guide. In it, you'll install Jaspr, set up a new project and learn the basics of Jaspr.
+欢迎使用Jaspr入门指南。在该指南中，您将安装Jaspr，设置一个新项目并学习Jaspr的基础知识。
 
-## 1. Install Jaspr
+##1.安装贾斯普
 
-You can install Jaspr either through our **VSCode Extension** or by installing the **Jaspr CLI** in the terminal. The CLI lets you manage the project from the command line, while the extension provides a more integrated experience within your IDE.
+您可以通过**VSCode扩展**或在终端中安装**Jaspr CLI**来安装Jaspr。CLI允许您从命令行管理项目，而扩展插件则在IDE中提供更完整的体验。
 
-- <Icon name="cubes" /> Use the Jaspr VSCode Extension to set up and serve your website with full debugging support from inside VSCode.
-- <Icon name="terminal" /> Use the Jaspr CLI to set up and serve your website from the command line.
+-<图标名称="立方"/>使用Jaspr VSCode扩展设置VSCode内部的完全调试支持，并为您的网站提供服务。
+-<图标名称="终端"/>使用Jaspr CLI从命令行设置和服务您的网站。
 
 <Tabs groupId="tooling">
-  <TabItem label="VSCode Extension" value="extension">
-    Install the Jaspr VSCode extension by searching for `Jaspr` in the extensions menu.
+<TabItem label="VSCode扩展"value="extension">
+通过在扩展菜单中搜索"Jaspr"来安装Jaspr VSCode扩展。
 
-    After installing and activating the extension, you will get a prompt to install the Jaspr CLI. Accept it to continue.
-  </TabItem>
-  <TabItem label="Jaspr CLI" value="cli">
-    Install the Jaspr CLI via:
+安装并激活扩展后，您将收到安装Jaspr CLI的提示。接受它以继续。
+</TabItem>
+<TabItem label="Jaspr CLI"value="cli">
+通过以下方式安装Jaspr CLI：
 
-    ```shell
-    dart pub global activate jaspr_cli
-    ```
+"'shell
+飞镖酒吧全局激活Jaspr_cli
+```
 
-    The `jaspr` command will be available in your terminal.
-  </TabItem>
+“Jaspr”命令将在您的终端中可用。
+</TabItem>
 </Tabs>
 
-## 2. Choose a Rendering Mode
+##2.选择渲染模式
 
-The first thing to do when starting a new project with Jaspr is to decide on a **Rendering Mode** to use.
-The rendering mode defines how your website is executed and built and each one has its own advantages and disadvantages based on what you want to build.
+使用Jaspr启动新项目时要做的第一件事是确定要使用的**渲染模式**。
+渲染模式定义了网站的执行和构建方式，每种模式都有自己的优缺点，具体取决于您想要构建的内容。
 
-Jaspr supports these three rendering modes:
+Jaspr支持以下三种渲染模式：
 
-<Card title="Static Mode" icon="1">
-  In static mode Jaspr performs **static rendering** (also known as Static Site Generation) at build time, generating a fully static site that you can deploy anywhere.
+<卡标题="静态模式"图标="1">
+在静态模式下，Jaspr在构建时执行**静态渲染**(也称为静态站点生成)，生成可部署到任何位置的完全静态站点。
 
-  **Recommended for most websites, landing pages, portfolios, blogs, documentation sites, etc.**
+**建议用于大多数网站、登录页、作品集、博客、文档站点等**
 </Card>
-<Card title="Server Mode" icon="2">
-  In server mode Jaspr builds a **server application** that pre-renders your components for each incoming request (also known as Server Side Rendering).
+<卡标题="服务器模式"图标="2">
+在服务器模式下，Jaspr构建**服务器应用程序**，为每个传入请求预渲染组件(也称为服务器端渲染)。
 
-  **Recommended for web applications that require backend integration, user authentication, or dynamic content that changes frequently.**
+**建议用于需要后端集成、用户身份验证或频繁更改的动态内容的Web应用程序。**
 </Card>
-<Card title="Client Mode" icon="3">
-  If you want, you can skip the server and pre-rendering part of Jaspr completely and use it as a client-side only framework.
+<卡title="客户端模式"图标="3">
+如果需要，可以完全跳过服务器和Jaspr的预渲染部分，并将其用作仅客户端框架。
 </Card>
 
-All modes support client-side interactivity and can be used to build interactive web applications. The main difference is when and how the initial HTML is generated. Read more about rendering modes [here](dev/modes).
+所有模式都支持客户端交互，并可用于生成交互式Web应用程序。主要区别在于生成初始HTML的时间和方式。阅读有关呈现模式[此处](dev/mode)的详细信息。
 
-## 3. Create your Project
+##3.创建项目
 
 <Tabs groupId="tooling">
-  <TabItem label="VSCode Extension" value="extension">
-    To create a new Jaspr project, open the command palette (`Ctrl+Shift+P`) and select **Jaspr: New Project**. You are asked to choose from several templates and set a project folder.
+<TabItem label="VSCode扩展"value="extension">
+要创建新的Jaspr项目，请打开命令选项板(Ctrl+Shift+P)，然后选择**Jaspr：新建项目**。系统会要求您从多个模板中进行选择并设置一个项目文件夹。
 
-    ![New Project](https://github.com/schultek/jaspr/blob/main/modules/jaspr-code/media/screenshots/new_project.png?raw=true)
+！[新建项目](https://github.com/schultek/jaspr/blob/main/modules/jaspr-code/media/screenshots/new_project.png?raw=true)
 
     The first three templates are the default choices for each rendering mode: static, server and client. The fourth option includes an embedded Flutter web app and the fifth comes with a custom backend setup using `shelf`.
 
     <Info>
       Choosing a template will not lock you into a specific configuration. Starting from one template you can easily modify your code to behave as any other template along the way.
     </Info>
-  </TabItem>
-  <TabItem label="Jaspr CLI" value="cli">
+</TabItem>
+<TabItem label="Jaspr CLI"value="cli">
     To create a new project run:
 
-    ```shell
+"'shell
     jaspr create my_website
-    ```
+```
 
     This will walk you through the setup wizard and create a new Jaspr project inside the `my_website` folder.
 
